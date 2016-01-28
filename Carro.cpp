@@ -1,19 +1,30 @@
+#include <string>
+#include <iostream>
 #include "Carro.h"
+
+using std::cout;
 
 Carro::Carro()
 {
+	velocidade = 0;
+	
 }
 
 Carro::~Carro()
 {
 }
 
-double aceleracao()
+void aceleracao()
 	{
-		return (torqueroda / raioroda)/massa;
+		velocidade += 5;
+	}
+
+void freio()
+	{
+		velocidade -= 5;
 	}
 	
-void decidirCor()
+string decidirCor()
 	{
 		cout << "Digite a cor que deseja: ";
 		cin >> cor;

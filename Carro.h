@@ -4,12 +4,13 @@
 class Carro
 {
 public:
-	double aceleracao();
+	void aceleracao();
+	void freiar();
 	void decidirCor();
 
 private:
-	double raioroda, torqueroda;
-	char cor;
+	int velocidade;
+	string cor;
 	
 
 };
