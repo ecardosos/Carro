@@ -7,13 +7,13 @@ public:
     Carro();
     ~Carro();
 	void aceleracao();
-	void freiar();
+	void freio();
 	void getVelocidade();
-	static string injEleVesion;
 
 private:
 	int velocidade;
 	string cor;
+    static string injEleVesion;
 };
 
 #endif // CARRO_H

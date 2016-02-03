@@ -4,38 +4,33 @@
 
 using std::cout;
 
-string Carro::injEleVesion = "1.0";
+string Carro::injEleVesion = "CAR.1.0";
 
-Carro::Carro(string cor)
+Carro::Carro(const string &corr)
 {
 	velocidade = 0;
-	cor = corCarro;
+	cor = corr;
 }
 
-Carro::Carro(const Carro &c)
+Carro::Carro(const Carro &outroCarro)
 {
-    freio = c.freio;
-    getVelocidade = c.getVelocidade;
-    aceleracao = c.aceleracao;
+    velocidade = outroCarro.velocidade;
+    cor = outroCarro.cor;
+    injEleVesion = outroCarro.injEleVesion;
 }
 
-Carro::~Carro()
-{
-    
-}
-
-void aceleracao()
+void Carro::aceleracao()
 	{
 		velocidade += 5;
 	}
 
-void freio()
+void Carro::freio()
 	{
 		velocidade -= 5;
 	}
 	
-string getVelocidade(int velocidade)
+int Carro::getVelocidade(int veloc)
 	{
-		return velocidade;
+		return veloc;
 	}
 
