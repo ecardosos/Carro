@@ -4,14 +4,24 @@
 
 using std::cout;
 
-Carro::Carro()
+string Carro::injEleVesion = "1.0";
+
+Carro::Carro(string cor)
 {
 	velocidade = 0;
-	
+	cor = corCarro;
+}
+
+Carro::Carro(const Carro &c)
+{
+    freio = c.freio;
+    getVelocidade = c.getVelocidade;
+    aceleracao = c.aceleracao;
 }
 
 Carro::~Carro()
 {
+    
 }
 
 void aceleracao()
@@ -24,9 +34,8 @@ void freio()
 		velocidade -= 5;
 	}
 	
-string decidirCor()
+string getVelocidade(int velocidade)
 	{
-		cout << "Digite a cor que deseja: ";
-		cin >> cor;
+		return velocidade;
 	}
 
