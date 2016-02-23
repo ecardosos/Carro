@@ -3,40 +3,36 @@
 #include <string>
 #include <iostream>
 
-using std::string;
+using namespace std;
 
-string injEleVesion = "CAR.1.0";
-
-Carro::Carro(const string &corCarro)
-{
-	cor = corCarro;
-	velocidade = 0;
-}
-
-Carro::~Carro()
-{
-}
+const string Carro::verInjecaoEletronica = "CAR.1.0";
 
 Carro::Carro(const Carro &outroCarro)
 {
-    velocidade = outroCarro.velocidade;
-    cor = outroCarro.cor;
-    injEleVesion = outroCarro.injEleVesion;
+  velocidade = outroCarro.velocidade;
 }
 
-void aceleracao()
+void Carro::aceleracao()
 {
-	velocidade += 5;
-	cout<<"Velocidade: "<<carro01.getVelocidade()<<endl;
+  velocidade += 5;
 }
 
-void freio()
+void Carro::freio()
 {
-	velocidade -= 5;
-	cout<<"Velocidade: "<<carro01.getVelocidade()<<endl;
+  velocidade -= 5;
 }
-	
-int getVelocidade()
+
+int Carro::getVelocidade()
 {
-	return velocidade;
-}	
+  return velocidade;
+}
+
+void setMotorista(Pessoa* nome)
+{
+  motorista = nome;
+}
+
+void setDono(Pessoa* nome)
+{
+  dono = nome;
+}
