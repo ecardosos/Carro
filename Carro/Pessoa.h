@@ -2,9 +2,12 @@
 #define PESSOA_H
 
 #include <string>
+#include <iostream>
 
 class Pessoa
 {
+  friend ostream &operator<<(ostream &, const Pessoa &p);
+
 public:
   Pessoa(std::string n, int i);
 

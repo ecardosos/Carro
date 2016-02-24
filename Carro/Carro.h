@@ -20,6 +20,9 @@ public:
   void setDono(Pessoa* nome);
 
   void setDataLicenciamento(Data* data);
+  
+  Carro &operator=(const Carro &c);
+  bool operator==(const Carro &c);
 
 private:
   int velocidade;

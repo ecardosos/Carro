@@ -49,3 +49,20 @@ void Carro::setDataLicenciamento(Data* data)
 {
   dataLicenciamento = data;
 }
+
+Carro & operator=(const Carro &c)
+{
+  if(&c != this)
+      velocidade = c.velocidade;
+
+  return this;
+}
+
+bool operator==(const Carro &c)
+{
+  if(velocidade != c.velocidade)
+      return false;
+  
+  if(velocidade == c.velocidade)
+      return true;
+}
