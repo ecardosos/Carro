@@ -1,7 +1,7 @@
 #include "Carro.h"
 
-#include <string>
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -18,6 +18,13 @@ Carro::Carro(const Carro &outroCarro)
 Carro::Carro(string cor)
 {
   velocidade = 0;
+}
+
+Carro & Carro::operator=(const Carro &c)
+{
+  if (&c != this)
+    velocidade = c.velocidade;
+  return *this;
 }
 
 void Carro::aceleracao()
@@ -45,20 +52,7 @@ void Carro::setDono(Pessoa* nome)
   dono = nome;
 }
 
-void Carro::setDataLicenciamento(Data* data)
-{
-  dataLicenciamento = data;
-}
-
-Carro & operator=(const Carro &c)
-{
-  if(&c != this)
-      velocidade = c.velocidade;
-
-  return this;
-}
-
-bool operator==(const Carro &c)
+bool Carro::operator==(const Carro &c)
 {
   if(velocidade != c.velocidade)
       return false;

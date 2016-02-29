@@ -11,12 +11,6 @@ Pessoa::Pessoa(string n, int i)
   i = idade;
 }
 
-friend ostream &operator<<(ostream &, const Pessoa &p)
-{
-  output << "nome:" << p.nome << "idade:" << p.idade;
-  return output;
-}
-
 string Pessoa::getNome() const
 {
   return nome;

@@ -12,16 +12,15 @@ public:
   Carro(const Carro &);
   Carro(std::string cor);
 
+  Carro & operator=(const Carro &c);
+
   void aceleracao();
   void freio();
   int getVelocidade();
 
   void setMotorista(Pessoa* nome);
   void setDono(Pessoa* nome);
-
-  void setDataLicenciamento(Data* data);
   
-  Carro &operator=(const Carro &c);
   bool operator==(const Carro &c);
 
 private:
@@ -33,8 +32,6 @@ private:
 
   Pessoa* motorista;
   Pessoa* dono;
-
-  Data* dataLicenciamento;
   };
 
 #endif // CARRO_H
