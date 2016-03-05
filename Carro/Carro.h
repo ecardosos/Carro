@@ -2,7 +2,7 @@
 #define CARRO_H
 
 #include "Pessoa.h"
-#include "Data.h"
+#include "Registro.h"
 
 #include <string>
 
@@ -10,7 +10,7 @@ class Carro
 {
 public:
   Carro(const Carro &);
-  Carro(std::string cor);
+  Carro(Pessoa* d, Registro* r, std::string c);
 
   Carro & operator=(const Carro &c);
 
@@ -18,7 +18,6 @@ public:
   void freio();
   int getVelocidade();
 
-  void setMotorista(Pessoa* nome);
   void setDono(Pessoa* nome);
   
   bool operator==(const Carro &c);
@@ -30,7 +29,7 @@ private:
 
   static const std::string verInjecaoEletronica;
 
-  Pessoa* motorista;
+  Registro* registro;
   Pessoa* dono;
   };
 

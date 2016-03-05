@@ -6,14 +6,14 @@ using namespace std;
 
 const int Data::diasPorMes[13] = { 0, 30, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
-Data::Data(int dia, int mes, int ano)
+Data::Data(int d, int m, int a)
 {
-  dia = dia;
-  mes = mes;
-  ano = ano;
+  dia = d;
+  mes = m;
+  ano = a;
 }
 
-int Data::validacaoData()
+int Data::validacaoData(int dia)
 {
   int d = diasPorMes[mes];
   if ((dia > 0) && (dia <= d))
@@ -25,6 +25,21 @@ int Data::validacaoData()
     cout << "data inválida!";
     return 1;
   }
+}
+
+int Data::getDia() const
+{
+  return dia;
+}
+
+int Data::getMes() const
+{
+  return mes;
+}
+
+int Data::getAno() const
+{
+  return ano;
 }
 
 void Data::print() const
