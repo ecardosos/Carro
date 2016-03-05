@@ -11,12 +11,8 @@ Carro::Carro(const Carro &outroCarro)
 {
   velocidade = outroCarro.velocidade;
   cor = outroCarro.cor;
-
   dono = new Pessoa;
   *dono = *outroCarro.dono;
-
-  registro = new Registro;
-  *registro = *outroCarro.registro;
 }
 
 Carro::Carro(Pessoa* d, Registro* r, string c) : dono(d),
@@ -35,9 +31,6 @@ Carro & Carro::operator=(const Carro &c)
 
     delete[] dono;
     *dono = *c.dono;
-
-    delete[] registro;
-    *registro = *c.registro;
   }
 
   return *this;

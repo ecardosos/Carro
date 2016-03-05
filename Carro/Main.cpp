@@ -10,13 +10,14 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-
   Pessoa* dono = new Pessoa("Fulalas", Data(15, 5, 1985));
-  Registro* licenciamento = new Registro(Data(10, 10, 2003), "ABC-1234");
+  Registro* registroVeiculo = new Registro(Data(10, 10, 2003), "ABC-1234");
+  Carro carro01(dono, registroVeiculo, "azul");
 
-  Carro carro01(dono, licenciamento, "azul");
-
-  Carro c2 = carro01;
+  Multa m1 = Multa(Data(12, 05, 2004), "Direcao sob influencia de alcool", 1915.40f);
+  Multa m2 = Multa(Data(12, 05, 2005), "Direcao perigosa", 191.54f);
+  registroVeiculo->adicionarMulta(m1);
+  registroVeiculo->adicionarMulta(m2);
 
   carro01.aceleracao();
 
@@ -27,7 +28,7 @@ int main(int argc, char **argv)
   cout << "Velocidade: " << carro01.getVelocidade() << endl;
 
   delete dono;
-  delete licenciamento;
+  delete registroVeiculo;
 
   return(0);
 }
