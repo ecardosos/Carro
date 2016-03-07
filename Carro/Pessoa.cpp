@@ -5,6 +5,12 @@
 
 using namespace std;
 
+ostream &operator<<(ostream &output, const Pessoa &p)
+{
+    output << "nome:" << p.nome << "idade:" << p.idade;
+    return output;
+}
+
 Pessoa::Pessoa(string n, int i)
 {
   n = nome;

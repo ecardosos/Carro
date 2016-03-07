@@ -7,14 +7,10 @@
 
 class Pessoa
 {
+friend std::ostream &operator<<(std::ostream &output, const Pessoa &p)
+
 public:
   Pessoa(std::string n, int i);
-
-  friend std::ostream &operator<<(std::ostream &output, const Pessoa &p)
-  {
-    output << "nome:" << p.nome << "idade:" << p.idade;
-    return output;
-  }
 
   std::string getNome() const;
   int getIdade() const;

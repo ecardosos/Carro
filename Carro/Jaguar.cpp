@@ -1,9 +1,14 @@
 #include "Jaguar.h"
 
 #include <iostream>
-#include <string>
 
 using namespace std;
+
+ostream &operator<<(ostream &output, const Jaguar &j)
+{
+    output <<;
+    return output;
+}
 
 Jaguar::Jaguar()
 {

@@ -1,4 +1,4 @@
-#include "Carro.h"
+#include "Caminhao.h"
 
 #include <iostream>
 
@@ -6,16 +6,16 @@ using namespace std;
 
 ostream &operator<<(ostream &output, const Carro &c)
 {
-    output << "número de assentos:" << numAssentos;
+    output <<;
     return output;
 }
 
-Carro::Carro()
+Caminhao::Caminhao()
 {
     
 }
 
-int Carro::getNumAssentos()
+float getCapacidadeMax()
 {
-    return numAssentos;
+    return capacidadeMax;
 }

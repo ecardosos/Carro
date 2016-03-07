@@ -3,7 +3,8 @@
 
 class Jaguar: public Carro
 {
-    friend std::ostream &operator<<(std::ostream &output, const Jaguar &j) 
+    friend std::ostream &operator<<(std::ostream &output, const Jaguar &j); 
+    
 public:
     Jaguar();
     
