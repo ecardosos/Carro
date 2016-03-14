@@ -8,7 +8,11 @@ class Caminhao: public Veiculo
   friend std::ostream &operator<<(std::ostream &output, const Caminhao &c);
   
 public:
-  Caminhao();
+  Caminhao();  
+  Caminhao(const Caminhao &);
+  
+  Caminhao & operator=(const Caminhao &c);
+  
   float getCapacidadeMax();
   
 private:

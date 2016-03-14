@@ -10,7 +10,11 @@ class Carro: public Veiculo
   friend std::ostream &operator<<(std::ostream &output, const Carro &c);
   
 public:
+  Carro(const Carro &);
   Carro();
+  
+  Carro & operator=(const Carro &c);
+  
   int getNumAssentos();
   
 private:

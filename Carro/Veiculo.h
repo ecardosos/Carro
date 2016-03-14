@@ -12,8 +12,9 @@ class Veiculo
 public:
   Veiculo(const Veiculo &);
   Veiculo(std::string cor);
+  Veiculo();
 
-  Veiculo & operator=(const Veiculo &c);
+  Veiculo & operator=(const Veiculo &v);
 
   void aceleracao();
   void freio();
@@ -21,7 +22,7 @@ public:
 
   void setDono(Pessoa* nome);
   
-  bool operator==(const Veiculo &c);
+  bool operator==(const Veiculo &v);
 
 private:
   int velocidade;

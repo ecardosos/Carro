@@ -13,13 +13,13 @@ ostream &operator<<(ostream &output, const Veiculo &v)
     return output;
 }
 
-Veiculo::Veiculo(const Veiculo &outroCarro)
+Veiculo::Veiculo(const Veiculo &outro)
 {
-  velocidade = outroCarro.velocidade;
-  cor = outroCarro.cor;
-  velocidadeMax = outroCarro.velocidadeMax;
+  velocidade = outro.velocidade;
+  cor = outro.cor;
+  velocidadeMax = outro.velocidadeMax;
   dono = new Pessoa;
-  *dono = *outroCarro.dono;
+  *dono = *outro.dono;
 }
 
 Veiculo::Veiculo(string cor, float velocidadeMax)
@@ -27,10 +27,21 @@ Veiculo::Veiculo(string cor, float velocidadeMax)
   velocidade = 0;
 }
 
-Veiculo & Veiculo::operator=(const Veiculo &c)
+Veiculo::Veiculo()
 {
-  if (&c != this)
-    velocidade = c.velocidade;
+    velocidade = 0;
+    velocidadeMax = 0;
+    cor = "";
+}
+
+Veiculo & Veiculo::operator=(const Veiculo &v)
+{
+  if (&v != this)
+    velocidade = v.velocidade;
+    velocidadeMax = v.velocidadeMax;
+    cor = v.cor;
+    delete[] dono;
+    *dono = *v.dono;
   return *this;
 }
 
@@ -62,11 +73,10 @@ void Veiculo::setDono(Pessoa* nome)
   dono = nome;
 }
 
-bool Veiculo::operator==(const Veiculo &c)
+bool Veiculo::operator==(const Veiculo &v)
 {
-  if(velocidade != c.velocidade)
+  if(velocidade != v.velocidade && cor != v.cor && dono != v.dono)
       return false;
-  
-  if(velocidade == c.velocidade)
-      return true;
+
+  return true;
 }
