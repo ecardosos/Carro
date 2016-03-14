@@ -4,8 +4,13 @@
 
 using namespace std;
 
-ostream &operator<<(ostream &output, const Jaguar &j)
+ostream &operator<<(ostream &output, const Gol &g)
 {
-    output <<;
+    output << ;
     return output;
+}
+
+Gol::Gol()
+{
+
 }

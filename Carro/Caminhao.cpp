@@ -4,7 +4,7 @@
 
 using namespace std;
 
-ostream &operator<<(ostream &output, const Carro &c)
+ostream &operator<<(ostream &output, const Caminhao &c)
 {
     output <<;
     return output;
@@ -15,7 +15,7 @@ Caminhao::Caminhao()
     
 }
 
-float getCapacidadeMax()
+float Caminhao::getCapacidadeMax()
 {
     return capacidadeMax;
 }

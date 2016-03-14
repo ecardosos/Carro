@@ -1,6 +1,8 @@
 #ifndef CARRO_H
 #define CARRO_H
 
+#include "Veiculo.h"
+
 #include <iostream>
 
 class Carro: public Veiculo
