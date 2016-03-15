@@ -15,6 +15,11 @@ Gol::Gol()
 
 }
 
+Gol::Gol(const Gol &) : Carro(static_cast<Carro>(outro))
+{
+    
+}
+
 Gol::Gol operator=(const Gol &g)
 {
   if (&g != this)
