@@ -6,17 +6,20 @@ class Jaguar: public Carro
     friend std::ostream &operator<<(std::ostream &output, const Jaguar &j); 
     
 public:
-    Jaguar();
+  Jaguar();
+  Jaguar(const Jaguar &);
     
-    void setArCondicionadoOn(bool onOff);
-    bool getArCondicionadoOn();
+  Jaguar & operator=(const Jaguar &j);
+  
+  void setArCondicionadoOn(bool onOff);
+  bool getArCondicionadoOn();
     
-    void setTravaPorta(bool onOff);
-    bool getTravaPorta();
+  void setTravaPorta(bool onOff);
+  bool getTravaPorta();
 
 private:
-    bool acOnOff;
-    bool travaOnOff;
+  bool acOnOff;
+  bool travaOnOff;
 };
 
 #endif // JAGUAR_H

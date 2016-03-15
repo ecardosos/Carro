@@ -5,10 +5,16 @@
 
 class Gol: public Carro
 {
-    friend std::ostream &operator<<(std::ostream &output, const Gol &g);
+  friend std::ostream &operator<<(std::ostream &output, const Gol &g);
     
 public:
-        Gol();
+  Gol();
+  Gol(const Gol &);
+        
+  Gol & operator=(const Gol &);
+  
+private:
+        
 };
 #endif // GOL_H
 

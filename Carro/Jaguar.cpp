@@ -13,6 +13,21 @@ ostream &operator<<(ostream &output, const Jaguar &j)
 Jaguar::Jaguar()
 {
     acOnOff = false;
+    travaOnOff = false;
+}
+
+Jaguar::Jaguar(const Jaguar &outro) : Carro(static_cast<Carro>(outro))
+{
+  acOnOff = outro.acOnOff;
+  travaOnOff = outro.travaOnOff;
+}
+
+Jaguar & Jaguar::operator=(const Jaguar &j)
+{
+  if (&j != this)
+    acOnOff = j.acOnOff;
+    travaOnOff = j.travaOnOff;
+  return *this;
 }
 
 void setArCondicionadoOn(bool onOff)

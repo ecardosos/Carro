@@ -9,7 +9,10 @@ const string Veiculo::verInjecaoEletronica = "VEHICLE.1.0";
 
 ostream &operator<<(ostream &output, const Veiculo &v)
 {
-    output <<;
+    output  << "Velocidade Máxima:" << velocidadeMax
+            << "Velocidade atual:" << velocidade
+            << "Cor do carro:" << cor
+            << "Dono do Carro:" << &dono;
     return output;
 }
 
@@ -32,6 +35,7 @@ Veiculo::Veiculo()
     velocidade = 0;
     velocidadeMax = 0;
     cor = "";
+    dono = NULL;
 }
 
 Veiculo & Veiculo::operator=(const Veiculo &v)
@@ -75,7 +79,7 @@ void Veiculo::setDono(Pessoa* nome)
 
 bool Veiculo::operator==(const Veiculo &v)
 {
-  if(velocidade != v.velocidade && cor != v.cor && dono != v.dono)
+  if(velocidade != v.velocidade && cor != v.cor && dono != v.dono && velocidadeMax != v.velocidadeMax)
       return false;
 
   return true;

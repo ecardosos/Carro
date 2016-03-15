@@ -14,3 +14,10 @@ Gol::Gol()
 {
 
 }
+
+Gol::Gol operator=(const Gol &g)
+{
+  if (&g != this)
+    
+  return *this;
+}
