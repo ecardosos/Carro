@@ -1,65 +1,28 @@
 #include "Carro.h"
 
-#include <string>
 #include <iostream>
 
 using namespace std;
 
-const string Carro::verInjecaoEletronica = "CAR.1.0";
-
-Carro::Carro(const Carro &outroCarro)
+Carro::Carro(const Carro &outro) : Veiculo(static_cast <Veiculo>(outro))
 {
-  velocidade = outroCarro.velocidade;
-  cor = outroCarro.cor;
-  dono = new Pessoa;
-  *dono = *outroCarro.dono;
+  numAssentos = outro.numAssentos;   
 }
 
-Carro::Carro(Pessoa* d, Registro* r, string c) : dono(d),
-                                                 registro(r),
-                                                 cor(cor)
+Carro::Carro()
 {
-  velocidade = 0;
-}
-
-Carro & Carro::operator=(const Carro &c)
-{
-  if (&c != this)
-  {
-    velocidade = c.velocidade;
-    cor = c.cor;
-
-    delete[] dono;
-    *dono = *c.dono;
-  }
-
-  return *this;
+    numAssentos = 0;
 }
 
 void Carro::aceleracao()
 {
-  velocidade += 5;
+  if(velocidade >= velocidadeMax)
+    cout<< atingiu a velocidade máxima!;
+  else
+    velocidade += 5;
 }
 
-void Carro::freio()
+int Carro::getNumAssentos()
 {
-  velocidade -= 5;
-}
-
-int Carro::getVelocidade()
-{
-  return velocidade;
-}
-
-void Carro::setDono(Pessoa* nome)
-{
-  dono = nome;
-}
-
-bool Carro::operator==(const Carro &c)
-{ 
-  if(velocidade != c.velocidade && cor != c.cor && dono != c.dono)
-      return false;
-
-  return true;
+  return numAssentos;
 }

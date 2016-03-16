@@ -1,36 +1,23 @@
 #ifndef CARRO_H
 #define CARRO_H
 
-#include "Pessoa.h"
-#include "Registro.h"
+#include "Veiculo.h"
 
-#include <string>
+#include <iostream>
 
-class Carro
+class Carro: public Veiculo
 {
 public:
   Carro(const Carro &);
-  Carro(Pessoa* d, Registro* r, std::string c);
-
-  Carro & operator=(const Carro &c);
-
-  void aceleracao();
-  void freio();
-  int getVelocidade();
-
-  void setDono(Pessoa* nome);
+  Carro();
   
-  bool operator==(const Carro &c);
-
-private:
-  int velocidade;
-
-  std::string cor;
-
-  static const std::string verInjecaoEletronica;
-
-  Registro* registro;
-  Pessoa* dono;
+  virtual void aceleracao();
+  
+  int getNumAssentos();
+  int getNumPortas();
+  
+protected:
+  int numAssentos;
+  int numPortas;
   };
-
 #endif // CARRO_H
