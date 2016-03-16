@@ -30,12 +30,22 @@ Jaguar & Jaguar::operator=(const Jaguar &j)
   return *this;
 }
 
-void setArCondicionadoOn(bool onOff)
+void Jaguar::setArCondicionadoOn(bool onOff)
 {
     acOnOff = true;
 }
 
-bool getArCondicionadoOn()
+bool Jaguar::getArCondicionadoOn()
 {
     return acOnOff;
+}
+
+void Jaguar::setTravaPorta(bool onOff)
+{
+    travaOnOff = true;
+}
+
+bool Jaguar::getTravaPorta()
+{
+    return travaOnOff;
 }
