@@ -1,21 +1,21 @@
 #ifndef CAMINHAO_H
 #define CAMINHAO_H
 
-#include "Veiculo.h"
+#include "VeiculoTransporteCarga.h"
 
-class Caminhao: public Veiculo
+class Caminhao: public VeiculoTransporteCarga
 {
   friend std::ostream &operator<<(std::ostream &output, const Caminhao &c);
-  
+
 public:
   Caminhao();  
   Caminhao(const Caminhao &);
   
   Caminhao & operator=(const Caminhao &c);
   
-  float getCapacidadeMax();
-  
+  int containers();
+
 private:
-  float capacidadeMax;
+  int numContainers;
   };
 #endif // CAMINHAO_H

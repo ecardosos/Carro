@@ -6,28 +6,32 @@ using namespace std;
 
 ostream &operator<<(ostream &output, const Carro &c)
 {
-    output << "número de assentos:" << numAssentos;
-    return output;
+  output << "número de portas" << c.numPortas;
+  return output;
 }
 
-Carro::Carro(const Carro &outro) : Veiculo(static_cast <Veiculo>(outro))
+Carro::Carro(const Carro &outro) : VeiculoTransportePassageiros(static_cast <VeiculoTransportePassageiros>(outro))
 {
- numAssentos = outro.numAssentos;   
+  numPortas = outro.numPortas;
 }
 
 Carro::Carro()
 {
-    numAssentos = 0;
+   numPortas = 0;
 }
 
 Carro & Carro::operator=(const Carro &c)
 {
+  static_cast <VeiculoTransportePassageiros>(c);
   if (&c != this)
-    numAssentos = c.numAssentos;
+  {
+    numPortas = c.numPortas;
+  }
+
   return *this;
 }
 
-int Carro::getNumAssentos()
+int Carro::portas()
 {
-    return numAssentos;
+  return numPortas;
 }

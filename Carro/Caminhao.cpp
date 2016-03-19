@@ -6,28 +6,31 @@ using namespace std;
 
 ostream &operator<<(ostream &output, const Caminhao &c)
 {
-    output <<;
-    return output;
+  output << "capacidade máxima:" << c.numContainers;
+  return output;
 }
 
-Caminhao::Caminhao(const Caminhao &outro) : Veiculo(static_cast <Veiculo>(outro))
+Caminhao::Caminhao(const Caminhao &outro) : VeiculoTransporteCarga(static_cast <VeiculoTransporteCarga>(outro))
 {
-    capacidadeMax = outro.capacidadeMax;
+  numContainers = outro.numContainers;
 }
 
 Caminhao::Caminhao()
 {
-    capacidadeMax = 0;
+  numContainers = 0;
 }
 
-Caminhao & Caminhao::operator=(const Caminhao &c)
+Caminhao & Caminhao::operator=(const Caminhao &c) 
 {
+  static_cast <VeiculoTransporteCarga>(c);
   if (&c != this)
-    capacidadeMax = c.capacidadeMax;
+  {
+    numContainers = c.numContainers;
+  }
   return *this;
 }
 
-float Caminhao::getCapacidadeMax()
+int Caminhao::containers()
 {
-    return capacidadeMax;
+  return numContainers;
 }

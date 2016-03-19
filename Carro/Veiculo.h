@@ -8,10 +8,10 @@
 class Veiculo
 {
   friend std::ostream &operator<<(std::ostream &output, const Veiculo &v);
-  
+
 public:
   Veiculo(const Veiculo &);
-  Veiculo(std::string cor);
+  Veiculo(std::string cor, float velocidadeMax);
   Veiculo();
 
   Veiculo & operator=(const Veiculo &v);
@@ -21,7 +21,7 @@ public:
   int getVelocidade();
 
   void setDono(Pessoa* nome);
-  
+
   bool operator==(const Veiculo &v);
 
 private:

@@ -1,11 +1,11 @@
 #ifndef CARRO_H
 #define CARRO_H
 
-#include "Veiculo.h"
+#include "VeiculoTransportePassageiros.h"
 
 #include <iostream>
 
-class Carro: public Veiculo
+class Carro: public VeiculoTransportePassageiros
 {
   friend std::ostream &operator<<(std::ostream &output, const Carro &c);
   
@@ -15,9 +15,10 @@ public:
   
   Carro & operator=(const Carro &c);
   
-  int getNumAssentos();
+
+  int portas();
   
 private:
-  int numAssentos;
+  int numPortas;
   };
 #endif // CARRO_H

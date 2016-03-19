@@ -9,10 +9,10 @@ const string Veiculo::verInjecaoEletronica = "VEHICLE.1.0";
 
 ostream &operator<<(ostream &output, const Veiculo &v)
 {
-    output  << "Velocidade Máxima:" << velocidadeMax
-            << "Velocidade atual:" << velocidade
-            << "Cor do carro:" << cor
-            << "Dono do Carro:" << &dono;
+  output << "Velocidade máxima:" << v.velocidadeMax
+         << "Velocidade atual:" << v.velocidade
+         << "Cor do carro:" << v.cor
+         << "Dono do Carro:" << v.dono;
     return output;
 }
 
@@ -52,24 +52,20 @@ Veiculo & Veiculo::operator=(const Veiculo &v)
 void Veiculo::aceleracao()
 {
   if(velocidade >= velocidadeMax)
-    cout<< atingiu a velocidade máxima!;
+    cout<< "atingiu a velocidade máxima!" << endl;
   else
     velocidade += 5;
 }
 
 void Veiculo::freio()
 {
+  if (velocidade > 0)
   velocidade -= 5;
 }
 
 int Veiculo::getVelocidade()
 {
   return velocidade;
-}
-
-void Veiculo::setMotorista(Pessoa* nome)
-{
-  motorista = nome;
 }
 
 void Veiculo::setDono(Pessoa* nome)
