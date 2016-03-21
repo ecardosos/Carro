@@ -4,25 +4,51 @@
 
 using namespace std;
 
-Carro::Carro(const Carro &outro) : Veiculo(static_cast <Veiculo>(outro))
+ostream &operator<<(ostream &output, const Carro &c)
 {
-  numAssentos = outro.numAssentos;   
+  output << "número de portas" << c.numPortas;
+  return output;
 }
 
-Carro::Carro()
+Carro::Carro() : numPortas(0)
 {
-    numAssentos = 0;
+
+}
+Carro::Carro(int numPortas)
+{
+
+}
+
+Carro::Carro(const Carro &outro)
+{
+  numPortas = outro.numPortas;
 }
 
 void Carro::aceleracao()
 {
-  if(velocidade >= velocidadeMax)
-    cout<< atingiu a velocidade máxima!;
+  if (velocidade >= velocidadeMax)
+    cout << "atingiu a velocidade máxima!" << endl;
   else
     velocidade += 5;
 }
 
-int Carro::getNumAssentos()
+void Carro::freio()
 {
-  return numAssentos;
+  if (velocidade > 0)
+    velocidade -= 5;
+}
+
+Carro & Carro::operator=(const Carro &c)
+{
+  if (&c != this)
+  {
+    numPortas = c.numPortas;
+  }
+
+  return *this;
+}
+
+int Carro::portas()
+{
+  return numPortas;
 }

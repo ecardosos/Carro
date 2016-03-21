@@ -4,17 +4,46 @@
 
 using namespace std;
 
-Caminhao::Caminhao(const Caminhao &outro) : Veiculo(static_cast <Veiculo>(outro))
+ostream &operator<<(ostream &output, const Caminhao &c)
 {
-    capacidadeMax = outro.capacidadeMax;
+  output << "capacidade máxima:" << c.numContainers;
+  return output;
 }
 
-Caminhao::Caminhao()
+Caminhao::Caminhao() : numContainers(0)
 {
-    capacidadeMax = 0;
+
 }
 
-float Caminhao::getCapacidadeMax()
+Caminhao::Caminhao(int numContainers)
 {
-    return capacidadeMax;
+
+}
+
+Caminhao::Caminhao(const Caminhao &outro)
+{
+  numContainers = outro.numContainers;
+}
+
+Caminhao & Caminhao::operator=(const Caminhao &c) 
+{
+  if (&c != this)
+  {
+    numContainers = c.numContainers;
+  }
+  return *this;
+}
+
+void Caminhao::aceleracao()
+{
+  velocidade += 3;
+}
+void Caminhao::freio()
+{
+  velocidade -= 3;
+}
+
+int Caminhao::containers()
+{
+  return numContainers;
 }

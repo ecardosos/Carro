@@ -9,17 +9,18 @@ class Veiculo
 {
 public:
   Veiculo(const Veiculo &);
-  Veiculo(std::string cor);
+  Veiculo(std::string cor, float velocidadeMax);
   Veiculo();
 
-  virtual void aceleracao() = 0;  
-  virtual void freio();
-  int getVelocidade();
+  virtual void aceleracao() = 0;
+  virtual void freio() = 0;
+
+  virtual float getVelocidade();
 
   virtual void setDono(Pessoa* nome);
-  
+
 protected:
-  int velocidade;
+  float velocidade;
   float velocidadeMax;
 
   std::string cor;
