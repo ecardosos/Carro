@@ -12,21 +12,22 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-  vector<Veiculo *> veiculos(2);
-  Caminhao caminhao01(1);
-  Carro carro01(4);
+  vector<Veiculo *> veiculos;
+  veiculos.push_back(new Caminhao(2));
+  veiculos.push_back(new Carro(4));
+  veiculos.push_back(new Bicicleta(1));
 
-  carro01.aceleracao();
-  caminhao01.aceleracao();
+  for (int i = 0; i < veiculos.size(); i++)
+  {
+    Carro *ptr = dynamic_cast<Carro *> (veiculos[i]);
 
-  cout << "Velocidade: " << carro01.getVelocidade() << endl;
-  cout << "Velocidade: " << caminhao01.getVelocidade() << endl;
+    if (ptr != NULL)
+    {
+      cout << "vamos à praia.";
+    }
+  }
 
-  carro01.freio();
-  caminhao01.freio();
-
-  cout << "Velocidade: " << carro01.getVelocidade() << endl;
-  cout << "Velocidade: " << caminhao01.getVelocidade() << endl;
+  veiculos.clear();
 
   return(0);
 }

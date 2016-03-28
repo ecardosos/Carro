@@ -28,20 +28,6 @@ Veiculo::Veiculo()
     dono = NULL;
 }
 
-void Veiculo::aceleracao()
-{
-  if(velocidade >= velocidadeMax)
-    cout<< "atingiu a velocidade máxima!" << endl;
-  else
-    velocidade += 5;
-}
-
-void Veiculo::freio()
-{
-  if (velocidade > 0)
-  velocidade -= 5;
-}
-
 float Veiculo::getVelocidade()
 {
   return velocidade;
