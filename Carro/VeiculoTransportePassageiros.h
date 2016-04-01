@@ -3,8 +3,6 @@
 
 #include "Veiculo.h"
 
-#include <iostream>
-
 class VeiculoTransportePassageiros : public Veiculo
 {
 public:
@@ -14,7 +12,9 @@ public:
   virtual void aceleracao() = 0;
   virtual void freio() = 0;
 
-  virtual int passageiros();
+  virtual int getCapacidade() = 0;
+
+  virtual int getPassageiros();
 
 protected:
   int numPassageiros;

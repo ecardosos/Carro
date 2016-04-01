@@ -14,12 +14,12 @@ VeiculoTransporteCarga::VeiculoTransporteCarga()
   compr = 0;
 }
 
-float VeiculoTransporteCarga::capacidade()
+float VeiculoTransporteCarga::getCapacidade()
 {
   return capacidadeMax;
 }
 
-float VeiculoTransporteCarga::comprimento()
+float VeiculoTransporteCarga::getComprimento()
 {
   return compr;
 }

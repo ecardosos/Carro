@@ -3,8 +3,6 @@
 
 #include "Veiculo.h"
 
-#include <iostream>
-
 class VeiculoTransporteCarga : public Veiculo
 {
 public:
@@ -14,8 +12,8 @@ public:
   virtual void aceleracao() = 0;
   virtual void freio() = 0;
 
-  virtual float capacidade();
-  virtual float comprimento();
+  virtual float getCapacidade();
+  virtual float getComprimento();
 
 protected:
   float capacidadeMax;
